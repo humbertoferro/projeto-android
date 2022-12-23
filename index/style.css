@@ -1,0 +1,206 @@
+@charset "UTF-8";
+/* #c5ebd6
+#83e1ad
+#3ddc84
+#2fa866
+#1a5c37
+#063d1e
+*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@font-face{/*Foi feito dessa forma porque tinha que baixar esse modelo de fonte*/
+    font-family: 'Android';
+    src: url(/fontes/idroid.otf) format('opentype');
+    font-weight: normal;
+}
+:root{ /*tudo que definir aqui serve para o documento inteiro*/
+   /*Essa área root posso usar para definir as variáveis*/
+   --cor00: #c5ebd6;
+   --cor01: #83e1ad;
+   --cor02: #3ddc84;
+   --cor03: #2fa866;
+   --cor04: #1a5c37;
+   --cor05: #063d1e;
+
+   --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+
+   --fonte-destaque: 'Bebas Neue', cursive;
+
+   --fonte-android: 'Android', cursive;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: var(--cor00);
+    font-family: var(--fonte-padrao);
+}
+
+header{
+    background-image: linear-gradient(to bottom, var(--cor03), var(--cor05));/*fiz isso para realizar um degradê no header*/
+    min-height: 150px;/*pra colocar altura mínima no header*/
+    text-align: center;/*para centralizar o texto*/
+    padding-top:30px;/*pra o texto não ficar tão colado em cima*/
+}
+
+header > h1 {
+    color: white;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    margin-bottom: 20px;/*para fica um espaço maior embaxo do h1 */
+    text-shadow: 2px 2px 0px black;/*peguei esse código no inspecionar,*/
+    font-weight: normal;/*pra deixar a letra mais leve, tava muito forte*/
+}
+header > p{
+    color: white;
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    max-width: 600px; /*largura máxima*/
+    padding-right: 10px;
+    padding-left: 10px;/*aumentar a distancia lateral do texto*/
+    margin-bottom: 30px;
+    margin: auto;
+}
+/*esse nav é usado para o menu*/
+nav{
+    background-color: var(--cor05);
+    padding: 10px;/*é um padding geral em cima, baixo, lado*/
+    box-shadow: 0px 7px 7px rgba(0, 0, 0.363);
+}
+
+/*isso significa o link que está em nav*/
+nav > a{
+    color: var(--cor01);
+    padding: 10px;/*aumentou o espaçamento entre os links*/
+    text-decoration: none;/*pra perder o sublinhado*/
+    font-weight: bold;/*deixa em negrito*/
+    transition-duration: 0.5s;/*pra quando passar o mouse demorar um pouquinho*/
+}
+
+/*é para fazer o botão flutuar quando passar o mouse*/
+nav > a:hover{
+    background-color: var(--cor03);/*vai ser a cor do quadrado*/
+    color: var(--cor05);/*é a cor da letra quando eu passar o mouse*/
+    border-radius: 5px;
+}
+
+main{
+    background-color: white;
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto; /*para em telas muito grandes ela expandir e ficar centralizada*/
+    margin-bottom: 30px; /*não quer o conteúdo principal grudado no rodapé*/
+    padding: 20px; /*porque as imagens e otexto estavam muito grudados nas laterias da página*/
+    box-shadow: 0px 0px 10px black; /*cria uma sombra nas laterais da página*/
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;/*vai arredondar apenas em baixo*/
+}
+a.externo::after{/*todo link que for externo, vou colocar após ele o \00a0 é pra dar um espaço entre o emoji e a palavra*/
+    content: '\00A0\1F517'}
+
+main h1{
+    color: var(--cor05);
+    font-family: var(--fonte-android);
+    font-weight: normal;
+    font-size: 1.8em;
+}
+main h2{
+    font-family: var(--fonte-android);
+    color: var(--cor04);
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, var(--cor01), transparent);
+    text-indent: 8px;
+    font-weight: normal;
+}
+
+
+main p{
+    margin: 15px 0px ; /*vai dar um separada entre os parágrafos*/
+    text-align: justify; /*coloco o texto como justificado*/
+    text-indent: 30px;/*é o recuo no início de cada parágrafo*/
+    font-size: 1em;/*é a grossura da letra*/
+    line-height: 2em;/*1em vai garantir que não haja espaçamento entre as linhas*/
+   }
+main strong{
+    /*ou seja tudo que estiver dentro do main e for strong*/
+    color: var(--cor04);
+    font-weight: bold;
+}
+
+main a {
+    text-decoration: none;
+    font-weight:bold ;
+    color: var(--cor05);
+    background-color: var(--cor01);
+    padding: 2px 6px; /*pra o backgroun não ficar muito grudado*/
+}
+
+main a :hover{
+    text-decoration: underline;/*vai ganhar sublinhado quando passar o mouse em cima*/
+    color: var(--cor04);
+
+}
+
+main img{
+    width: 100%;
+}
+
+main img.pequena /*botou o ponto porque é uma class*/ {
+    max-width: 350px;
+    margin: auto; /*pra o margin auto funcionar eu tenho que dar um display block*/
+    display: block;
+}
+div.video{
+    background-color: var(--cor05);
+    margin: 0px -20px 30px -20px;/*o -20 vou fazer com que as bordas da caixa grudem nas laterais, o 30px vai dar um espçamaneto da caixa de baixo*/
+    padding: 20px;
+    padding-bottom: 57%;
+    position: relative;
+}
+div.video > iframe/*ou seja, o iframe que está dentro da div.video*/
+{
+    position: absolute;
+    top: 5%; /*é a distância do vídeo pra o topo da caixa*/
+    left: 5%;/*é a distância do vídeo para a lateral esquerda da caixa*/
+    width: 90%;/*esses são com relação ao tamanho do vídeo dentro da caixa*/
+    height: 90%;
+}
+aside{
+    background-color:var(--cor01) ;
+    padding: 10px;/*aumenta o espaçamento do texto dentro da caixa, com a própria caixa*/
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.295);
+
+}
+
+aside > h3 {
+    background-color: var(--cor04);
+    color: white;/*é a cor da letra*/
+    padding: 10px; /*vai fazer com que aumente o espaço entre as letras e a borda da caixa*/
+    margin: -10px -10px 0px -10px;/*vai fazer com que cresça pra fora a margem*/
+    border-radius: 10px 10px 0px 0px;/*vai fazer com que fique arredondado apenas as bordas de cima*/
+}
+
+aside > ul {
+    list-style-position: inside; /*colocar as bolinhas dentro da caixa*/
+    list-style-type: '\2714';/*peguei o código de check na emojipedia e colocando dessa forma, faz com que os pontinhos virem check*/
+    columns: 2; /*coloquei a lista em duas colunas*/
+}
+
+footer{
+    background-color: var(--cor05);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px; /*vai aumentar o espaçamento da caixa com as letras que estão dentro*/
+}
+footer > p > a /*ou seja, todo o link que esta dentro de p, ou coloco só footer a*/{
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+footer:hover{
+    text-decoration:underline ;/*aparece uma linha embaixo quando passa o mouse em cima*/
+    color: var(--cor01);
+}
