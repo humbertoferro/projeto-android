@@ -59,7 +59,8 @@ header > p{
     max-width: 600px; /*largura máxima*/
     padding-right: 10px;
     padding-left: 10px;/*aumentar a distancia lateral do texto*/
-    margin-bottom: 30px;
+    padding-bottom: 
+    50px;
     margin: auto;
 }
 /*esse nav é usado para o menu*/
